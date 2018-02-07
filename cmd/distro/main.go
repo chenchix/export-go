@@ -23,8 +23,6 @@ import (
 const (
 	envClientHost string = "EXPORT_DISTRO_CLIENT_HOST"
 	envDataHost   string = "EXPORT_DISTRO_DATA_HOST"
-	envMQTTSCert  string = "MQTTS_CERT_FILE"
-	envMQTTSKey   string = "MQTTS_KEY_FILE"
 )
 
 var logger *zap.Logger
@@ -59,8 +57,6 @@ func loadConfig() distro.Config {
 	cfg := distro.GetDefaultConfig()
 	cfg.ClientHost = env(envClientHost, cfg.ClientHost)
 	cfg.DataHost = env(envDataHost, cfg.DataHost)
-	cfg.MQTTSCert = env(envMQTTSCert, cfg.MQTTSCert)
-	cfg.MQTTSKey = env(envMQTTSKey, cfg.MQTTSKey)
 	return cfg
 }
 

@@ -9,17 +9,14 @@
 package distro
 
 import (
-	export "github.com/edgexfoundry/export-go"
-
 	"github.com/edgexfoundry/core-domain-go/models"
+	"github.com/edgexfoundry/export-go"
 )
 
 const (
 	defaultPort       = 48070
 	defaultClientHost = "127.0.0.1"
 	defaultDataHost   = "127.0.0.1"
-	defaultMQTTSCert  = "dummy.crt"
-	defaultMQTTSKey   = "dummy.key"
 )
 
 // Sender - Send interface
@@ -61,8 +58,6 @@ type Config struct {
 	Port       int
 	ClientHost string
 	DataHost   string
-	MQTTSCert  string
-	MQTTSKey   string
 }
 
 var cfg Config
@@ -72,7 +67,5 @@ func GetDefaultConfig() Config {
 		Port:       defaultPort,
 		ClientHost: defaultClientHost,
 		DataHost:   defaultDataHost,
-		MQTTSCert:  defaultMQTTSCert,
-		MQTTSKey:   defaultMQTTSKey,
 	}
 }
